@@ -467,7 +467,7 @@ namespace :test do
                                "GCC_GENERATE_TEST_COVERAGE_FILES" => "YES" }
 
       t.actions = [XCTask::BuildAction::TEST]
-      t.formatter = XCTask::BuildFormatter::XCODEBUILD
+      t.formatter = XCTask::BuildFormatter::XCPRETTY
     end
     unless task.execute
       puts 'iOS Tests Failed!'
@@ -488,7 +488,7 @@ namespace :test do
                                "GCC_GENERATE_TEST_COVERAGE_FILES" => "YES" }
 
       t.actions = [XCTask::BuildAction::TEST]
-      t.formatter = XCTask::BuildFormatter::XCODEBUILD
+      t.formatter = XCTask::BuildFormatter::XCPRETTY
     end
     unless task.execute
       puts 'macOS Tests Failed!'
