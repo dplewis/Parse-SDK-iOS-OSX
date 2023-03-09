@@ -101,7 +101,7 @@ jobs:
         path: Carthage
         key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
         restore-keys: |
-              ${{ runner.os }}-carthage-
+          ${{ runner.os }}-carthage-
     - name: Submodules and Bundle Install          
       run: |
         git submodule update --init --recursive
@@ -169,7 +169,7 @@ jobs:
         path: Carthage
         key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
         restore-keys: |
-              ${{ runner.os }}-carthage-
+          ${{ runner.os }}-carthage-
     - name: Submodules and Bundle Install
       run: |
         git submodule update --init --recursive
@@ -210,7 +210,7 @@ jobs:
           path: Carthage
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
-                ${{ runner.os }}-carthage-
+            ${{ runner.os }}-carthage-
       - name: Submodules and Bundle Install
         run: |
           git submodule update --init --recursive
