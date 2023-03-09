@@ -33,16 +33,14 @@ jobs:
       run: set -o pipefail && env NSUnbufferedIO=YES bundle exec rake test:ios
       env:
         DEVELOPER_DIR: ${{ env.CI_XCODE_14 }}
-    - name: Upload Artifact
+    - name: Upload Test Logs
       uses: actions/upload-artifact@v3
-        name: "Upload Test Logs"
-        if: ${{ always() }}
-        with:
-          name: test-logs
-          path: |
-            ~/Library/Logs/DiagnosticReports
-            ~/Library/Developer/Xcode/DerivedData/Parse-*/Logs/Test
-            ~/Library/Logs/scan
+      with:
+        name: test-logs
+        path: |
+          ~/Library/Logs/DiagnosticReports
+          ~/Library/Developer/Xcode/DerivedData/Parse-*/Logs/Test
+          ~/Library/Logs/scan
     - name: Send codecov
       run: bash <(curl https://codecov.io/bash)
 
