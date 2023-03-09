@@ -487,7 +487,7 @@ namespace :test do
       t.additional_options = { "GCC_INSTRUMENT_PROGRAM_FLOW_ARCS" => "YES",
                                "GCC_GENERATE_TEST_COVERAGE_FILES" => "YES" }
 
-      t.actions = [XCTask::BuildAction::TEST]
+      t.actions = [XCTask::BuildAction::CLEAN, XCTask::BuildAction::TEST]
       t.formatter = XCTask::BuildFormatter::XCPRETTY
     end
     unless task.execute
@@ -564,7 +564,7 @@ namespace :test do
         t.destinations = [ios_simulator]
         t.configuration = 'Debug'
 
-        t.actions = [XCTask::BuildAction::TEST]
+        t.actions = [XCTask::BuildAction::CLEAN, XCTask::BuildAction::TEST]
         t.formatter = XCTask::BuildFormatter::XCPRETTY
       end
 

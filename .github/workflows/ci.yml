@@ -33,6 +33,16 @@ jobs:
       run: set -o pipefail && env NSUnbufferedIO=YES bundle exec rake test:ios
       env:
         DEVELOPER_DIR: ${{ env.CI_XCODE_14 }}
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+        name: "Upload Test Logs"
+        if: ${{ always() }}
+        with:
+          name: test-logs
+          path: |
+            ~/Library/Logs/DiagnosticReports
+            ~/Library/Developer/Xcode/DerivedData/Parse-*/Logs/Test
+            ~/Library/Logs/scan
     - name: Send codecov
       run: bash <(curl https://codecov.io/bash)
 
@@ -70,7 +80,6 @@ jobs:
       run: bash <(curl https://codecov.io/bash)
 
   facebook_utils:
-    needs: parseui
     runs-on: macos-12
     env:
       GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -101,7 +110,6 @@ jobs:
       run: bash <(curl https://codecov.io/bash)
 
   twitter_utils:
-    needs: parseui
     runs-on: macos-12
     steps:
     - uses: actions/checkout@v2
