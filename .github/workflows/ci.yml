@@ -6,7 +6,7 @@ on:
     branches: [ '**' ]
 env:
   CI_XCODE_11: '/Applications/Xcode_11.7.app/Contents/Developer'
-  CI_XCODE_14: '/Applications/Xcode_14.2.app/Contents/Developer'
+  CI_XCODE_14: '/Applications/Xcode_13.4.1.app/Contents/Developer'
 
 jobs:
   ios:
@@ -240,7 +240,12 @@ jobs:
           key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gem-
-      - name: Submodules and Bundle Instal
+      - name: Submodules
+        run: |
+          git submodule update --init --recursive
+          sudo gem install bundler
+          bundle config path vendor/bundle
+      - name: Bundle Install
         run: |
           git submodule update --init --recursive
           sudo gem install bundler
