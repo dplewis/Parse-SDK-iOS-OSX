@@ -162,6 +162,12 @@ jobs:
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gem-
+    - name: Submodules and Bundle Install
+      run: |
+        git submodule update --init --recursive
+        sudo gem install bundler
+        bundle config set path 'vendor/bundle'
+        bundle install
     - name: Cache Carthage
       uses: actions/cache@v2
       id: carthage-cache
@@ -170,12 +176,6 @@ jobs:
         key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
         restore-keys: |
           ${{ runner.os }}-carthage-
-    - name: Submodules and Bundle Install
-      run: |
-        git submodule update --init --recursive
-        sudo gem install bundler
-        bundle config set path 'vendor/bundle'
-        bundle install
     - name: Carthage
       if: steps.carthage-cache.outputs.cache-hit != 'true'
       run: |
@@ -203,6 +203,12 @@ jobs:
           key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gem-
+      - name: Submodules and Bundle Install
+        run: |
+          git submodule update --init --recursive
+          sudo gem install bundler
+          bundle config set path 'vendor/bundle'
+          bundle install
       - name: Cache Carthage
         uses: actions/cache@v2
         id: carthage-cache
@@ -211,12 +217,6 @@ jobs:
           key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
           restore-keys: |
             ${{ runner.os }}-carthage-
-      - name: Submodules and Bundle Install
-        run: |
-          git submodule update --init --recursive
-          sudo gem install bundler
-          bundle config set path 'vendor/bundle'
-          bundle install
       - name: Carthage
         if: steps.carthage-cache.outputs.cache-hit != 'true'
         run: |
