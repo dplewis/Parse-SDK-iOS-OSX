@@ -6,7 +6,7 @@ on:
     branches: [ '**' ]
 env:
   CI_XCODE_11: '/Applications/Xcode_11.7.app/Contents/Developer'
-  CI_XCODE_14: '/Applications/Xcode_13.4.1.app/Contents/Developer'
+  CI_XCODE_14: '/Applications/Xcode_14.2.app/Contents/Developer'
 
 jobs:
   ios:
@@ -94,6 +94,12 @@ jobs:
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gem-
+    - name: Submodules and Bundle Install          
+      run: |
+        git submodule update --init --recursive
+        sudo gem install bundler
+        bundle config set path 'vendor/bundle'
+        bundle install
     - name: Cache Carthage
       uses: actions/cache@v2
       id: carthage-cache
@@ -102,12 +108,6 @@ jobs:
         key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
         restore-keys: |
           ${{ runner.os }}-carthage-
-    - name: Submodules and Bundle Install          
-      run: |
-        git submodule update --init --recursive
-        sudo gem install bundler
-        bundle config set path 'vendor/bundle'
-        bundle install
     - name: Carthage
       if: steps.carthage-cache.outputs.cache-hit != 'true'
       run: |
@@ -246,11 +246,8 @@ jobs:
           sudo gem install bundler
           bundle config path vendor/bundle
       - name: Bundle Install
-        run: |
-          git submodule update --init --recursive
-          sudo gem install bundler
-          bundle config path vendor/bundle
-          bundle install
+        if: steps.cache-gems.outputs.cache-hit != 'true'
+        run: bundle install
       - name: Create Jazzy Docs
         run: |
           ./Scripts/jazzy.sh
