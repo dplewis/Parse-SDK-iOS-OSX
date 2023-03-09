@@ -6,11 +6,11 @@ on:
     branches: [ '**' ]
 env:
   CI_XCODE_11: '/Applications/Xcode_11.7.app/Contents/Developer'
-  CI_XCODE_13: '/Applications/Xcode_13.4.1.app/Contents/Developer'
+  CI_XCODE_14: '/Applications/Xcode_14.2.app/Contents/Developer'
 
 jobs:
   ios:
-    runs-on: macos-latest
+    runs-on: macos-12
     steps:
     - uses: actions/checkout@v2
     - name: Setup Ruby
@@ -32,12 +32,12 @@ jobs:
     - name: Build-Test
       run: set -o pipefail && env NSUnbufferedIO=YES bundle exec rake test:ios
       env:
-        DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}
+        DEVELOPER_DIR: ${{ env.CI_XCODE_14 }}
     - name: Send codecov
       run: bash <(curl https://codecov.io/bash)
 
   macos:
-    runs-on: macos-latest
+    runs-on: macos-12
     steps:
     - uses: actions/checkout@v2
     - name: Setup Ruby
@@ -65,13 +65,13 @@ jobs:
     - name: Build-Test
       run: set -o pipefail && env NSUnbufferedIO=YES bundle exec rake test:macos
       env:
-        DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}
+        DEVELOPER_DIR: ${{ env.CI_XCODE_14 }}
     - name: Send codecov
       run: bash <(curl https://codecov.io/bash)
 
   facebook_utils:
     needs: parseui
-    runs-on: macos-latest
+    runs-on: macos-12
     env:
       GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -96,13 +96,13 @@ jobs:
     - name: Build-Test
       run: set -o pipefail && env NSUnbufferedIO=YES bundle exec rake test:facebook_utils:ios
       env:
-        DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}
+        DEVELOPER_DIR: ${{ env.CI_XCODE_14 }}
     - name: Send codecov
       run: bash <(curl https://codecov.io/bash)
 
   twitter_utils:
     needs: parseui
-    runs-on: macos-latest
+    runs-on: macos-12
     steps:
     - uses: actions/checkout@v2
     - name: Setup Ruby
@@ -124,12 +124,12 @@ jobs:
     - name: Build-Test
       run: set -o pipefail && env NSUnbufferedIO=YES bundle exec rake test:twitter_utils:ios
       env:
-        DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}
+        DEVELOPER_DIR: ${{ env.CI_XCODE_14 }}
     - name: Send codecov
       run: bash <(curl https://codecov.io/bash)
 
   parseui:
-    runs-on: macos-latest
+    runs-on: macos-12
     env:
       GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -153,7 +153,7 @@ jobs:
         carthage bootstrap --use-xcframeworks
     - name: Build-Test
       env:
-        DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}
+        DEVELOPER_DIR: ${{ env.CI_XCODE_14 }}
       run: set -o pipefail && env NSUnbufferedIO=YES bundle exec rake test:parseui:all
     - name: Send codecov
       run: bash <(curl https://codecov.io/bash)
@@ -187,7 +187,7 @@ jobs:
           DEVELOPER_DIR: ${{ env.CI_XCODE_11 }}
 
   docs:
-    runs-on: macos-latest
+    runs-on: macos-12
     steps:
       - uses: actions/checkout@v2
       - name: Setup Ruby
@@ -210,4 +210,4 @@ jobs:
         run: |
           ./Scripts/jazzy.sh
         env:
-          DEVELOPER_DIR: ${{ env.CI_XCODE_13 }}
+          DEVELOPER_DIR: ${{ env.CI_XCODE_14 }}
