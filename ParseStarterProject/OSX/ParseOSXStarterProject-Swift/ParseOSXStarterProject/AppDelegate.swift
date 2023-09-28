@@ -9,7 +9,7 @@
 
 import Cocoa
 
-import Parse
+import ParseCore
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let configuration = ParseClientConfiguration {
             // Add your Parse applicationId:
             $0.applicationId = "your_application_id"
-            // Uncomment and add your clientKey (it's not required if you are using Parse Server):
+            // Add your clientKey:
             $0.clientKey = "your_client_key"
 
             // Uncomment the following line and change to your Parse Server address;
