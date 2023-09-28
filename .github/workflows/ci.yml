@@ -34,8 +34,6 @@ jobs:
       #     swift-version: '5.5.0'
       # - name: Get Swift Version
       #   run: swift --version
-      - name: Install Xcode Command Line Tools
-        run: xcode-select --install
       - name: Setup Ruby
         uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
       - name: Cache Gems
