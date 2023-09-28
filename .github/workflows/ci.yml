@@ -29,6 +29,12 @@ jobs:
     runs-on: ${{ (matrix.script == 'package:release' && 'macos-11') || 'macos-12' }}
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Swift
+        uses: swift-actions/setup-swift@v1
+        with:
+          swift-version: '5.5'
+      - name: Get Swift Version
+        run: swift --version
       - name: Setup Ruby
         uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
       - name: Cache Gems
