@@ -3481,9 +3481,9 @@
 		81C582DE1C3B0A40000063C6 /* Parse-iOS-Dynamic.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Parse-iOS-Dynamic.xcconfig"; sourceTree = "<group>"; };
 		81C582DF1C3B0A40000063C6 /* Parse-tvOS-Dynamic.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Parse-tvOS-Dynamic.xcconfig"; sourceTree = "<group>"; };
 		81C582E01C3B0A40000063C6 /* Parse-watchOS-Dynamic.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Parse-watchOS-Dynamic.xcconfig"; sourceTree = "<group>"; };
-		81C5845D1C3B0A98000063C6 /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		81C585BF1C3B0AA1000063C6 /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		81C5870F1C3B0AA9000063C6 /* Parse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Parse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C5845D1C3B0A98000063C6 /* .framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = .framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C585BF1C3B0AA1000063C6 /* .framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = .framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C5870F1C3B0AA9000063C6 /* .framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = .framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C6BDEC1B4DB16500553A83 /* PFInstallationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFInstallationConstants.h; sourceTree = "<group>"; };
 		81C6BDED1B4DB16500553A83 /* PFInstallationConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFInstallationConstants.m; sourceTree = "<group>"; };
 		81C6BDF31B4DD32700553A83 /* PFCurrentObjectControlling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCurrentObjectControlling.h; sourceTree = "<group>"; };
@@ -3854,9 +3854,9 @@
 				81C09F861AF97A490043B49C /* ParseUnitTests-macOS.xctest */,
 				810156691BB3832700D7C7BD /* Parse.framework */,
 				815F24151BD04D150054659F /* Parse.framework */,
-				81C5845D1C3B0A98000063C6 /* Parse.framework */,
-				81C585BF1C3B0AA1000063C6 /* Parse.framework */,
-				81C5870F1C3B0AA9000063C6 /* Parse.framework */,
+				81C5845D1C3B0A98000063C6 /* .framework */,
+				81C585BF1C3B0AA1000063C6 /* .framework */,
+				81C5870F1C3B0AA9000063C6 /* .framework */,
 				4AE33A0B1F5451AD0088DCA0 /* ParseUnitTests-iOS-host.app */,
 			);
 			name = Products;
@@ -6967,7 +6967,7 @@
 			);
 			name = "Parse-iOS-Dynamic";
 			productName = "Parse-iOS";
-			productReference = 81C5845D1C3B0A98000063C6 /* Parse.framework */;
+			productReference = 81C5845D1C3B0A98000063C6 /* .framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		81C5845F1C3B0AA1000063C6 /* Parse-tvOS-Dynamic */ = {
@@ -6987,7 +6987,7 @@
 			);
 			name = "Parse-tvOS-Dynamic";
 			productName = "Parse-iOS";
-			productReference = 81C585BF1C3B0AA1000063C6 /* Parse.framework */;
+			productReference = 81C585BF1C3B0AA1000063C6 /* .framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		81C585C11C3B0AA9000063C6 /* Parse-watchOS-Dynamic */ = {
@@ -7007,7 +7007,7 @@
 			);
 			name = "Parse-watchOS-Dynamic";
 			productName = "Parse-iOS";
-			productReference = 81C5870F1C3B0AA9000063C6 /* Parse.framework */;
+			productReference = 81C5870F1C3B0AA9000063C6 /* .framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		97010FAB1630B18F00AB761E /* Parse-macOS */ = {
@@ -8859,6 +8859,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81DCD1491D2DA080002501A2 /* Debug.xcconfig */;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_CODE_COVERAGE = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -8876,6 +8877,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81DCD14A1D2DA080002501A2 /* Release.xcconfig */;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
