@@ -6,16 +6,16 @@ XCODEDIST   = xcodebuild -workspace "$(CURDIR)/Parse.xcworkspace"
 XCODEBUILD	= xcodebuild
 SHELL       = /bin/bash -e -o pipefail
 
-.PHONY: clean macos ios tvos watchos buildcheck archives xcframework
+.PHONY: macos ios tvos watchos buildcheck archives xcframework
 
 clean:
 	rm -rf "$(BUILD_DIR)"
 
-release: clean archives xcframework
+release: archives xcframework
 
 macos:
 	@echo "** Building macOS framework..."
-	$(XCODEDIST) archive -scheme "Parse-macOS" -destination 'generic/platform=macOS' -archivePath $(ARCHIVE_DIR)/Parse-macOS -configuration 'Release' BUILD_LIBRARY_FOR_DISTRIBUTION=YES SKIP_INSTALL=NO | xcpretty -c
+	$(XCODEDIST) archive -scheme "Parse-macOS" -destination 'generic/platform=macOS' -archivePath $(ARCHIVE_DIR)/Parse-macOS | xcpretty -c
 
 ios:
 	@echo "** Building iOS frameworks..."
@@ -43,3 +43,9 @@ xcframework:
 	rm -rf $(PRODUCT_DIR)/Parse.xcframework
 	$(XCODEBUILD) -create-xcframework -output $(PRODUCT_DIR)/Parse.xcframework \
 		-framework $(ARCHIVE_DIR)/Parse-macOS.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-iOS.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-iOS-sim.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-tvOS.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-tvOS-sim.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-watchOS.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-watchOS-sim.xcarchive$(FWK_PATH)
