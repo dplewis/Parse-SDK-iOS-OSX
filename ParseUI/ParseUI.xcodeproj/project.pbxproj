@@ -17,7 +17,6 @@
 		39E22A0F2ACFE6AC00D9AE5C /* ParseObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 39E22A0E2ACFE6AC00D9AE5C /* ParseObjC */; };
 		39E22A112ACFE88300D9AE5C /* ParseFacebookUtilsiOS in Frameworks */ = {isa = PBXBuildFile; productRef = 39E22A102ACFE88300D9AE5C /* ParseFacebookUtilsiOS */; };
 		39E22A132ACFE88300D9AE5C /* ParseTwitterUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 39E22A122ACFE88300D9AE5C /* ParseTwitterUtils */; };
-		39E22A1B2ACFF05900D9AE5C /* ParseUIDemo.app in Resources */ = {isa = PBXBuildFile; fileRef = 39E229E52ACFD71D00D9AE5C /* ParseUIDemo.app */; };
 		7C77D109292A509000C4D90E /* PFPurchaseTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C77D0C9292A507500C4D90E /* PFPurchaseTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C77D10A292A509000C4D90E /* PFTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C77D0CB292A507500C4D90E /* PFTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C77D10B292A509000C4D90E /* PFQueryTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C77D0CD292A507500C4D90E /* PFQueryTableViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -134,6 +133,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		39E22A602AD003BF00D9AE5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A9A9496200D0329005D8F4B;
+			remoteInfo = ParseUI;
+		};
 		4A0ECCAC200DA7D100BA84A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -919,6 +925,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				39E22A612AD003BF00D9AE5C /* PBXTargetDependency */,
 			);
 			name = "ParseUIDemo-Swift";
 			packageProductDependencies = (
@@ -1180,6 +1187,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		39E22A612AD003BF00D9AE5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A9A9496200D0329005D8F4B /* ParseUI */;
+			targetProxy = 39E22A602AD003BF00D9AE5C /* PBXContainerItemProxy */;
+		};
 		4A0ECCAD200DA7D100BA84A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4A9A9496200D0329005D8F4B /* ParseUI */;

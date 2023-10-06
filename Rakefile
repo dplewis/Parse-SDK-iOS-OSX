@@ -741,7 +741,6 @@ namespace :test do
     task :all do
       Rake::Task['test:parseui:framework'].invoke
       Rake::Task['test:parseui:demo_objc'].invoke
-      Rake::Task['test:parseui:demo_swift'].invoke
     end
 
     task :framework do
