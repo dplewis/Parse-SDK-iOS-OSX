@@ -7,9 +7,6 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-/**
- * Add support for both SPM and Dynamic Framework Imports TODO: (@dplewis)
- */
 #if canImport(ParseCore)
     @_exported import ParseCore
 #else

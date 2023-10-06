@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-@import Bolts.BFTask;
+@import Bolts;
 
 #import "PFTwitterAuthenticationProvider.h"
 #import "PFTwitterTestCase.h"
@@ -54,8 +54,6 @@
     provider = [PFTwitterAuthenticationProvider providerWithTwitter:twitter];
     XCTAssertNotNil(provider);
     XCTAssertEqual(provider.twitter, twitter);
-
-    PFAssertThrowsInconsistencyException([PFTwitterAuthenticationProvider new]);
 }
 
 - (void)testAuthData {

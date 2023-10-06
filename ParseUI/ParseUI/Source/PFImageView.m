@@ -27,11 +27,7 @@
 #import "BFTaskCompletionSource.h"
 #endif
 
-#if __has_include(<Parse/PFFileObject.h>)
-#import <Parse/PFFileObject.h>
-#else
-#import "PFFileObject.h"
-#endif
+@import ParseCore;
 
 #import "PFImageCache.h"
 

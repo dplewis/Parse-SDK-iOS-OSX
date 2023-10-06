@@ -21,23 +21,9 @@
 
 #import "AppDelegate.h"
 
-#if __has_include(<Parse/Parse.h>)
-#import <Parse/Parse.h>
-#else
-#import "Parse.h"
-#endif
-
-#if __has_include(<ParseTwitterUtils/ParseTwitterUtils.h>)
-#import <ParseTwitterUtils/ParseTwitterUtils.h>
-#else
-#import "ParseTwitterUtils.h"
-#endif
-
-#if __has_include(<ParseFacebookUtilsiOS/ParseFacebookUtilsiOS.h>)
-#import <ParseFacebookUtilsiOS/ParseFacebookUtilsiOS.h>
-#else
-#import "ParseFacebookUtilsiOS.h"
-#endif
+@import ParseCore;
+@import ParseTwitterUtils;
+@import ParseFacebookUtilsiOS;
 
 #import "PFUIDemoViewController.h"
 

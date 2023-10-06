@@ -21,13 +21,7 @@
 
 #import "PFSignUpViewController.h"
 
-#if __has_include(<Parse/PFConstants.h>)
-#import <Parse/PFConstants.h>
-#import <Parse/PFUser.h>
-#else
-#import "PFConstants.h"
-#import "PFUser.h"
-#endif
+@import ParseCore;
 
 #import "PFUIAlertView.h"
 #import "PFLocalization.h"

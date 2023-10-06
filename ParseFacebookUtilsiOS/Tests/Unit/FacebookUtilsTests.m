@@ -7,18 +7,13 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-@import Parse;
+@import ParseCore;
+@import ParseFacebookUtils;
 
 #import <OCMock/OCMock.h>
 
 #import "PFFacebookTestCase.h"
 #import "PFFacebookUtils_Private.h"
-
-#if __has_include(<ParseFacebookUtilsV4/PFFacebookUtils.h>)
-#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
-#else
-#import "PFFacebookUtils.h"
-#endif
 
 ///--------------------------------------
 #pragma mark - FacebookUtilsTests

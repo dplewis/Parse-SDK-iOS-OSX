@@ -8,10 +8,10 @@
 
 import UIKit
 
-import Parse
+import ParseCore
 import ParseUI
 
-import Bolts.BFTask
+import Bolts
 
 class DeletionCollectionViewController: PFQueryCollectionViewController, UIAlertViewDelegate {
     convenience init(className: String?) {
