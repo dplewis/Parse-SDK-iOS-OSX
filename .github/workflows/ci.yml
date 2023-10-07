@@ -99,6 +99,7 @@ jobs:
           path: |
             ~/Library/Developer/Xcode/DerivedData/Parse-*/Logs/Test
             ~/Library/Developer/Xcode/DerivedData/**/Logs/Build
+            ~/var/folders/r_
       - name: Upload Coverage
         uses: codecov/codecov-action@v3.1.1
         with:
