@@ -11,6 +11,16 @@ SHELL       = /bin/bash -e -o pipefail
 clean:
 	rm -rf "$(BUILD_DIR)"
 
+test: test-macos test-ios 
+
+test-macos:
+	@echo "Running macOS tests..."
+	$(XCODECI) -scheme OCMock -destination 'platform=macOS' test | xcpretty -c
+
+test-ios:
+	@echo "Running iOS tests..."
+	$(XCODECI) -scheme OCMockLib -destination 'platform=iOS Simulator,OS=latest,name=iPhone 15' test | xcpretty -c
+
 release: archives xcframework
 
 macos:
@@ -32,12 +42,10 @@ watchos:
 	$(XCODEDIST) archive -scheme "Parse-watchOS" -destination 'generic/platform=watchOS' -archivePath $(ARCHIVE_DIR)/Parse-watchOS | xcpretty -c
 	$(XCODEDIST) archive -scheme "Parse-watchOS" -destination 'generic/platform=watchOS Simulator' -archivePath $(ARCHIVE_DIR)/Parse-watchOS-sim | xcpretty -c
 
-buildcheck:
-	@echo "** Verifying archives..."
-	Tools/buildcheck.rb $(ARCHIVE_DIR)
 
-archives: macos #ios tvos watchos buildcheck
+archives: macos ios tvos watchos
 
+# TODO: Build Parse.Framework into Archives to generate Parse.xcframework
 xcframework:
 	@echo "** Creating XCFrameworks..."
 	rm -rf $(PRODUCT_DIR)/Parse.xcframework
