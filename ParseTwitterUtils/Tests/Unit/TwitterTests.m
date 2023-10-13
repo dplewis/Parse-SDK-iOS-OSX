@@ -9,7 +9,7 @@
 
 @import Accounts;
 @import Bolts;
-@import Parse.PFConstants;
+@import ParseCore;
 @import Social;
 
 #import "PFOAuth1FlowDialog.h"
