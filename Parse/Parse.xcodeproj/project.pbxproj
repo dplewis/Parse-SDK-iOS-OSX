@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A6B6772AD8EA8000123017 /* ParseObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 39A6B6762AD8EA8000123017 /* ParseObjC */; };
+		39A6B6792AD8EB1D00123017 /* ParseObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 39A6B6782AD8EB1D00123017 /* ParseObjC */; };
 		39E22AB62AD0655300D9AE5C /* OCMock in Frameworks */ = {isa = PBXBuildFile; productRef = 39E22AB52AD0655300D9AE5C /* OCMock */; };
 		39E22ABC2AD0657F00D9AE5C /* OCMock in Frameworks */ = {isa = PBXBuildFile; productRef = 39E22ABB2AD0657F00D9AE5C /* OCMock */; };
 		39E24A0D2AD214540014357C /* Bolts in Frameworks */ = {isa = PBXBuildFile; productRef = 39E24A0C2AD214540014357C /* Bolts */; };
@@ -2835,20 +2837,6 @@
 			remoteGlobalIDString = 4AE33A0A1F5451AD0088DCA0;
 			remoteInfo = "ParseUnitTests-iOS-host";
 		};
-		811167461B8402DA003CB026 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 09D33641139C54930098E916 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 97010FAB1630B18F00AB761E;
-			remoteInfo = "Parse-OSX";
-		};
-		8111674B1B8402DF003CB026 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 09D33641139C54930098E916 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 81C3821B19CCA89E0066284A;
-			remoteInfo = "Parse-iOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -3474,6 +3462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CE6ABE0292074CC0054D9D2 /* SystemConfiguration.framework in Frameworks */,
+				39A6B6792AD8EB1D00123017 /* ParseObjC in Frameworks */,
 				7CE6ABDE292074C70054D9D2 /* AudioToolbox.framework in Frameworks */,
 				39E22AB62AD0655300D9AE5C /* OCMock in Frameworks */,
 				7CE6ABDC292074C10054D9D2 /* libsqlite3.tbd in Frameworks */,
@@ -3484,6 +3473,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39A6B6772AD8EA8000123017 /* ParseObjC in Frameworks */,
 				39E22ABC2AD0657F00D9AE5C /* OCMock in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6692,12 +6682,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				8111674C1B8402DF003CB026 /* PBXTargetDependency */,
 				4AE33A2D1F5451B20088DCA0 /* PBXTargetDependency */,
 			);
 			name = "ParseUnitTests-iOS";
 			packageProductDependencies = (
 				39E22AB52AD0655300D9AE5C /* OCMock */,
+				39A6B6782AD8EB1D00123017 /* ParseObjC */,
 			);
 			productName = ParseTests;
 			productReference = 816F449B1A8E8933009CDB32 /* ParseUnitTests-iOS.xctest */;
@@ -6715,11 +6705,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				811167471B8402DA003CB026 /* PBXTargetDependency */,
 			);
 			name = "ParseUnitTests-macOS";
 			packageProductDependencies = (
 				39E22ABB2AD0657F00D9AE5C /* OCMock */,
+				39A6B6762AD8EA8000123017 /* ParseObjC */,
 			);
 			productName = ParseTests;
 			productReference = 81C09F861AF97A490043B49C /* ParseUnitTests-macOS.xctest */;
@@ -8448,17 +8438,6 @@
 			target = 4AE33A0A1F5451AD0088DCA0 /* ParseUnitTests-iOS-host */;
 			targetProxy = 4AE33A2C1F5451B20088DCA0 /* PBXContainerItemProxy */;
 		};
-		811167471B8402DA003CB026 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 97010FAB1630B18F00AB761E /* Parse-macOS */;
-			targetProxy = 811167461B8402DA003CB026 /* PBXContainerItemProxy */;
-		};
-		8111674C1B8402DF003CB026 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 81C3821B19CCA89E0066284A /* Parse-iOS */;
-			targetProxy = 8111674B1B8402DF003CB026 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -8943,6 +8922,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		39A6B6762AD8EA8000123017 /* ParseObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ParseObjC;
+		};
+		39A6B6782AD8EB1D00123017 /* ParseObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ParseObjC;
+		};
 		39E22AB52AD0655300D9AE5C /* OCMock */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 39E22AB42AD0655300D9AE5C /* XCRemoteSwiftPackageReference "ocmock" */;
