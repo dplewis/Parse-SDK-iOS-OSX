@@ -37,11 +37,11 @@ xcframework:
 	rm -rf $(PRODUCT_DIR)/Parse.xcframework
 	$(XCODEBUILD) -create-xcframework \
 		-framework $(ARCHIVE_DIR)/Parse-iOS.xcarchive$(FWK_PATH)
-		# -framework $(ARCHIVE_DIR)/Parse-iOS-sim.xcarchive$(FWK_PATH) \
-		# -framework $(ARCHIVE_DIR)/Parse-tvOS.xcarchive$(FWK_PATH) \
-		# -framework $(ARCHIVE_DIR)/Parse-tvOS-sim.xcarchive$(FWK_PATH) \
-		# -framework $(ARCHIVE_DIR)/Parse-watchOS.xcarchive$(FWK_PATH) \
-		# -framework $(ARCHIVE_DIR)/Parse-watchOS-sim.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-iOS-sim.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-tvOS.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-tvOS-sim.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-watchOS.xcarchive$(FWK_PATH) \
+		-framework $(ARCHIVE_DIR)/Parse-watchOS-sim.xcarchive$(FWK_PATH) \
 		-output $(PRODUCT_DIR)/Parse.xcframework
 
 clean:
