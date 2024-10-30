@@ -9,9 +9,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class BFTask<__covariant BFGenericType>;
-
 #import "PFConstants.h"
+
+@class BFTask<__covariant BFGenericType>;
 
 NS_ASSUME_NONNULL_BEGIN
 

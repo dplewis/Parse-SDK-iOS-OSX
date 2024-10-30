@@ -12,7 +12,7 @@
 #import "PFConstants.h"
 #import "PFUser.h"
 
-@class BFTask;
+@class BFTask<__covariant BFGenericType>;
 
 NS_ASSUME_NONNULL_BEGIN
 
