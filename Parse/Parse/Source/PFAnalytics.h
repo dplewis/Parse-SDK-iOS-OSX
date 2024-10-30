@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
-@import Bolts;
+@class BFTask<__covariant BFGenericType>;
 
 #import "PFConstants.h"
 
